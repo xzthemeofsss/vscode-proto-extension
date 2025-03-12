@@ -1,0 +1,55 @@
+{
+  "name": "vscode-proto-extension",
+  "displayName": "Proto Reference",
+  "description": "在 Go 代码中快速跳转到 Proto 定义",
+  "version": "1.0.0",
+  "publisher": "xzthemeofsss",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "protobuf",
+    "golang",
+    "proto",
+    "reference",
+    "codelens"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vscode-proto-extension.git"
+  },
+  "activationEvents": [
+    "onLanguage:go"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-proto-extension.jumpToProto",
+        "title": "Jump to Proto Definition"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT"
+}
